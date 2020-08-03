@@ -1,0 +1,85 @@
+.Pokecard {
+	padding-bottom: 1rem;
+	background-image: linear-gradient(#f4ad2a, #f3a616);
+	box-shadow: 2px 2px 10px rgba(15, 15, 15, 0.3);
+	transition: all .2s;
+	display: grid;
+	justify-content: center;
+	width: 100%;
+	grid-template-rows: max-content 215px repeat(2, max-content);
+	grid-template-columns: 215px;
+	border-radius: 3px;
+}
+
+.Pokecard__img {
+	width: 100%;
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+	z-index: 2;
+	text-indent: -9999px;
+}
+
+.Pokecard__img-alt {
+	width: 100%;
+	background-color: #fff;
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+	z-index: 1;
+}
+
+.Pokecard__desc {
+	list-style: none;
+	padding-left: 0;
+	line-height: 150%;
+	font-size: 1.4rem;
+}
+
+.Pokecard__item-fire {
+	background-color: #f42;
+}
+.Pokecard__item-water {
+	background-color: #39f;
+}
+
+.Pokecard__item-bug {
+	background-color: #ab2;
+}
+
+.Pokecard__item-flying {
+	background-color: #89f;
+}
+
+.Pokecard__item-electric {
+	background-color: #fc3;
+}
+
+.Pokecard__item-normal {
+	background-color: #aa9;
+}
+
+.Pokecard__item-poison {
+	background-color: #a59;
+}
+
+.Pokecard__item-exp-200 {
+	background-color: orangered;
+}
+
+.Pokecard__item-exp-100 {
+	background-color: orange;
+}
+
+.Pokecard__item-exp-50 {
+	background-color: yellow;
+}
+.Pokecard__item-low-exp {
+	background-color: greenyellow;
+}
+
+.Pokecard__item:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.Pokecard:hover {
+	transform: scale(1.3);
+}

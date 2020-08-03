@@ -1,0 +1,18 @@
+.header {
+	margin: 0;
+	padding: 5rem;
+	color: #f0f6fa;
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 5px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 350px);
+	justify-content: center;
+	width: 80%;
+	margin: auto;
+	gap: 2rem;
+	padding: 2rem 1rem;
+}
