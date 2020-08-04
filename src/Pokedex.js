@@ -2,6 +2,35 @@ import React, { Component } from 'react';
 import Pokecard from './Pokecard';
 import './Pokedex.css';
 
+const axios = require('axios');
+
+const randomPokemon = async (number = 807) => {
+	const randomId = Math.floor(Math.random() * number) + 1;
+	const response = await axios
+		.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+		.then((response) => {
+			return response.data;
+		});
+	return response;
+};
+
+function generatePokedex() {
+	let arr = [];
+
+	for (let i = 0; i < 9; i++) {
+		randomPokemon().then((data) => {
+			arr.push({
+				id: data.id,
+				name: data.name,
+				type: data.types[0].type.name,
+				exp: data.base_experience
+			});
+		});
+	}
+	console.log('###ARR', arr);
+	return arr;
+}
+generatePokedex();
 class Pokedex extends Component {
 	static defaultProps = {
 		pokemon: [

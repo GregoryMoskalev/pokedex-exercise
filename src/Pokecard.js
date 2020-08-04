@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Pokecard.css';
-const POKE_API = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
-const ALT_POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+// const POKE_API = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
+const ALT_POKE_API = 'https://pokeres.bastionbot.org/images/pokemon/';
 
 class Pokecard extends Component {
 	render() {
-		let imgSrc = `${POKE_API}${('00' + this.props.id).substring(this.props.id.length)}.png`;
+		// let imgSrc = `${POKE_API}${('00' + this.props.id).substring(this.props.id.length)}.png`;
 		let altImgSrc = `${ALT_POKE_API}${this.props.id}.png`;
 		let cardClasses = 'Pokecard__item';
 		if (+this.props.exp > 200) {
@@ -20,13 +20,13 @@ class Pokecard extends Component {
 		return (
 			<div className="Pokecard">
 				<h2>{this.props.name}</h2>
-				<img
+				{/* <img
 					className="Pokecard__img"
 					src={imgSrc}
 					lowsrc={altImgSrc}
 					alt={this.props.name}
 					onerror="this.style.display='none'"
-				/>
+				/> */}
 				<img className="Pokecard__img-alt" src={altImgSrc} alt={this.props.name} />
 				<ul className="Pokecard__desc">
 					<li className={`Pokecard__item Pokecard__item-${this.props.type}`}>
